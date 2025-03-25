@@ -3,41 +3,183 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Obsidian Gear</title>
-    <link rel="stylesheet" href="index.css">
+    <title>Obsidian G. - Projektinformationen</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+        h1 {
+            color: #2c3e50;
+        }
+        h2 {
+            color: #3498db;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 5px;
+        }
+        .feature-card {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .btn {
+            display: inline-block;
+            background: #3498db;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        .btn:hover {
+            background: #2980b9;
+        }
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+        }
+        .screenshot {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin: 10px 0;
+        }
+        .tech-badge {
+            display: inline-block;
+            background: #e0e0e0;
+            padding: 3px 8px;
+            border-radius: 3px;
+            margin-right: 5px;
+            font-size: 0.8em;
+        }
+    </style>
 </head>
 <body>
-    <!-- Header -->
-
     <header>
-        <h0>Obsidian Gear</h0>
-    </header
-
-    <!-- FAQ -->
-    <section class="faq">
         <div class="container">
-            <h2>Frequently Asked Questions (FAQ)</h2>
-            <div class="faq-item">
-                <h3>Are the products all original products?</h3>
-                <p>Yes, we only buy from trusted retailers.</p>
-            </div>
-            <div class="faq-item">
-                <h3>How do we do this?</h3>
-                <p>We launder money by purchasing a lot of credit/gift cards from reliable sellers on Tor.
-                We use these cards to buy consoles from trusted sellers (Amazon/Mediamarkt/Saturn/etc.).
-                We sell these parts for BTC and buy new credit/gift cards with these BTC.</p>
-            </div>
-            <div class="faq-item">
-                <h3>How can you pay?</h3>
-                <p>Payments can be made via Bitcoin, Monero, or Ethereum.</p>
-            </div>
-            <div class="faq-item">
-                <h3>What to do if I have questions or need help?</h3>
-                <p>Please contact us at: consoles247@duck.com</p>
-            </div>
+            <h1>Obsidian G. - Projektinformationen</h1>
+            <p>Technische Dokumentation der E-Commerce Website</p>
         </div>
-    </section>
+    </header>
 
-    <script src="index.js"></script>
+    <div class="container">
+        <section id="overview">
+            <div class="feature-card">
+                <h2>Projektübersicht</h2>
+                <p>Obsidian G. ist eine moderne E-Commerce-Webseite für Technologieprodukte mit Fokus auf Gaming-Hardware und Mobilgeräte.</p>
+                
+                <a href="index.html" class="btn">Zur Live-Website</a>
+                
+                <h3>Hauptmerkmale:</h3>
+                <ul>
+                    <li>Responsive Design für alle Geräte</li>
+                    <li>Dynamischer Warenkorb</li>
+                    <li>Mehrere Produktkategorien</li>
+                    <li>Kryptowährungszahlungen</li>
+                    <li>FAQ-Bereich</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="structure">
+            <div class="feature-card">
+                <h2>Seitenstruktur</h2>
+                <h3>Hauptbereiche:</h3>
+                <ol>
+                    <li><strong>Header</strong> mit Navigation</li>
+                    <li><strong>Produktkategorien</strong>:
+                        <ul>
+                            <li>Consoles</li>
+                            <li>PC/Notebook</li>
+                            <li>Graphics Cards</li>
+                            <li>Phones</li>
+                            <li>Coming Soon</li>
+                        </ul>
+                    </li>
+                    <li><strong>Warenkorb</strong> (rechte Seitenleiste)</li>
+                    <li><strong>FAQ-Bereich</strong></li>
+                </ol>
+            </div>
+        </section>
+
+        <section id="technology">
+            <div class="feature-card">
+                <h2>Verwendete Technologien</h2>
+                <div>
+                    <span class="tech-badge">HTML5</span>
+                    <span class="tech-badge">CSS3</span>
+                    <span class="tech-badge">JavaScript</span>
+                    <span class="tech-badge">Responsive Design</span>
+                </div>
+                
+                <h3>Dateistruktur:</h3>
+                <ul>
+                    <li><code>index.html</code> - Hauptseite</li>
+                    <li><code>index.css</code> - Stylesheet</li>
+                    <li><code>index.js</code> - Hauptskript</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="features">
+            <div class="feature-card">
+                <h2>Besondere Funktionen</h2>
+                
+                <h3>Warenkorb-System</h3>
+                <p>Dynamische Berechnung der Gesamtsumme und Checkout-Funktion.</p>
+                
+                <h3>Zahlungsmethoden</h3>
+                <p>Unterstützung für Kryptowährungen:
+                <ul>
+                    <li>Bitcoin</li>
+                    <li>Monero</li>
+                    <li>Ethereum</li>
+                    <li>Litecoin</li>
+                </ul>
+                
+                <h3>Produktgarantie</h3>
+                <p>Alle Produkte (außer Nintendo DS-Serie) sind originalverpackt.</p>
+            </div>
+        </section>
+
+        <section id="contact">
+            <div class="feature-card">
+                <h2>Kontakt & Support</h2>
+                <p>Bei Fragen oder Problemen wenden Sie sich bitte an:</p>
+                <p><strong>E-Mail:</strong> obsigear@protonmail.com</p>
+                
+                <p>Diese Dokumentationsseite dient als technische Referenz für das Obsidian G. Projekt.</p>
+                <a href="index.html" class="btn">Zurück zur Hauptseite</a>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>Obsidian G. Projekt Dokumentation &copy; 2023</p>
+            <p>Diese Seite dient als technische Dokumentation der E-Commerce Website.</p>
+        </div>
+    </footer>
 </body>
 </html>
