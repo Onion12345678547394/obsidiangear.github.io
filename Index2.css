@@ -1,29 +1,32 @@
+/* Modernes Dark-Mode Design mit Animationen - Optimiert für PC & Mobile */
 :root {
   --primary: #7d6bff;
-  --secondary: #b8b3ff;
+  --secondary: #a29bfe;
   --dark: #2d3436;
   --light: #f5f6fa;
   --accent: #ff8fab;
   --success: #00b894;
+  --mobile-breakpoint: 768px;
+  --phone-breakpoint: 480px;
 }
 
-/* Basis-Styles */
+/* Basis-Styles für alle Geräte */
 body {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  line-height: 1.7;
+  line-height: 1.6;
   max-width: 900px;
   margin: 0 auto;
-  padding: 1rem;
+  padding: 2rem;
   background-color: var(--dark);
   color: var(--light);
-  transition: all 0.3s ease;
-  -webkit-text-size-adjust: 100%; /* Verhindert Text-Zoomen auf iOS */
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
-/* Mobile First Approach */
+/* Typografie */
 h1 {
   color: var(--primary);
-  font-size: 2rem; /* Kleinere Schrift auf Mobile */
+  font-size: clamp(2rem, 5vw, 2.5rem); /* Responsive Schriftgröße */
   font-weight: 800;
   margin-bottom: 1.5rem;
   position: relative;
@@ -31,97 +34,171 @@ h1 {
   line-height: 1.3;
 }
 
+h1::after {
+  content: '';
+  position: absolute;
+  bottom: -0.5rem;
+  left: 0;
+  width: 100%;
+  height: 0.25rem;
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  border-radius: 2px;
+}
+
 h2 {
   color: var(--secondary);
-  font-size: 1.5rem; /* Kleinere Überschriften */
-  margin-top: 2rem;
-  margin-bottom: 1rem;
+  font-size: clamp(1.5rem, 4vw, 1.8rem);
+  margin: 2.5rem 0 1.25rem;
+  font-weight: 700;
+}
+
+/* Info-Boxen */
+.info-box {
+  background: rgba(45, 52, 54, 0.85);
+  backdrop-filter: blur(8px);
+  border-radius: 12px;
+  padding: 1.75rem;
+  margin: 1.75rem 0;
+  border-left: 4px solid var(--primary);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+}
+
+.info-box:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Listen */
+ul {
+  padding-left: 1.25rem;
+}
+
+li {
+  margin-bottom: 0.75rem;
+  position: relative;
+  padding-left: 1.75rem;
+  line-height: 1.5;
+}
+
+li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+}
+
+/* Buttons & Links */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  color: white;
+  padding: 0.9rem 2rem;
+  text-decoration: none;
+  border-radius: 50px;
+  margin: 1.5rem 0;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 4px 15px rgba(125, 107, 255, 0.3);
+  transition: all 0.25s ease;
+  min-height: 44px;
+  min-width: 120px;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(125, 107, 255, 0.4);
+}
+
+a:not(.btn) {
+  color: var(--secondary);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+  padding: 0.1rem 0.2rem;
+  border-radius: 3px;
+}
+
+a:not(.btn):hover {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+/* Animationen */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(1rem); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 .info-box {
-  background: rgba(45, 52, 54, 0.9); /* Weniger Transparenz für bessere Lesbarkeit */
-  backdrop-filter: blur(5px); /* Performance-optimiert */
-  border-radius: 10px;
-  padding: 1.5rem;
-  margin: 1.5rem 0;
-  border-left: 3px solid var(--primary);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.5s ease-out forwards;
 }
 
-/* Touch-Optimierte Buttons */
-.btn {
-  display: inline-flex;
-  padding: 1rem 2rem; /* Größere Touch-Fläche */
-  font-size: 1rem;
-  min-width: 120px; /* Mindestbreite für bessere Bedienbarkeit */
-  text-align: center;
-}
+.info-box:nth-child(1) { animation-delay: 0.1s; }
+.info-box:nth-child(2) { animation-delay: 0.2s; }
+.info-box:nth-child(3) { animation-delay: 0.3s; }
 
-/* Mobile-spezifische Anpassungen */
-@media screen and (max-width: 480px) {
+/* Responsive Anpassungen */
+@media (max-width: 768px) {
   body {
-    padding: 0.8rem;
+    padding: 1.25rem;
+  }
+
+  .info-box {
+    padding: 1.5rem;
+    margin: 1.5rem -0.5rem;
+    border-radius: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 1rem;
   }
 
   h1 {
-    font-size: 1.8rem;
-    margin-bottom: 1rem;
+    margin-bottom: 1.25rem;
   }
 
   h1::after {
     height: 3px;
-    bottom: -7px;
-  }
-
-  h2 {
-    font-size: 1.3rem;
+    bottom: -0.4rem;
   }
 
   .info-box {
-    padding: 1.2rem;
-    margin: 1.2rem -0.8rem; /* Leichte Vergrößerung der Fläche */
-    border-radius: 8px;
-  }
-
-  ul {
-    padding-left: 1.2rem;
-  }
-
-  li {
-    padding-left: 1.2rem;
-    margin-bottom: 0.7rem;
+    padding: 1.25rem;
+    margin: 1.25rem -0.25rem;
+    backdrop-filter: blur(5px);
   }
 
   .btn {
-    width: 100%; /* Vollbreite Buttons auf kleinen Displays */
-    margin: 1.5rem 0;
+    width: 100%;
+    text-align: center;
     padding: 1rem;
   }
 }
 
-/* Tablet-Optimierungen */
-@media (min-width: 481px) and (max-width: 768px) {
-  body {
-    padding: 1.2rem;
+/* Touch-Optimierungen */
+@media (pointer: coarse) {
+  .btn {
+    padding: 1.1rem 2rem;
   }
-
-  .info-box {
-    padding: 1.3rem;
+  
+  a:not(.btn) {
+    padding: 0.3rem 0;
   }
 }
 
-/* Verbesserte Touch-Targets */
-button, .btn, a {
-  min-height: 44px; /* Apple HIG empfiehlt mind. 44x44px */
-  min-width: 44px;
-}
-
-/* Performance-Optimierungen für Mobile */
+/* Performance-Optimierungen */
 * {
-  -webkit-tap-highlight-color: transparent; /* Entfernt blauen Tap-Highlight auf iOS */
+  -webkit-tap-highlight-color: transparent;
 }
 
-/* Textauswahl verbessern */
 ::selection {
   background: var(--primary);
   color: white;
